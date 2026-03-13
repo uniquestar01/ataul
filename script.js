@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-final').addEventListener('click', showFinalSurprise);
 
     // Share Buttons & Reaction
-    const shareText = encodeURIComponent("🎉 Hey Atual! I made this ultra-premium cinematic birthday surprise for you. Check it out: ");
+    const shareText = encodeURIComponent("🎉 Hey Ataul! I made this ultra-premium cinematic birthday surprise for you. Check it out: ");
     const currentUrl = encodeURIComponent(window.location.href);
 
     document.getElementById('whatsapp-share').addEventListener('click', () => {
@@ -242,7 +242,7 @@ function startCatchCake() {
     function gameTick() {
         if(time <= 0) {
             clearTimeout(cakeInterval);
-            msg.innerText = "Atual Energy Level Unlocked 🎂🔥";
+            msg.innerText = "Ataul Energy Level Unlocked 🎂🔥";
             msg.style.color = "var(--accent)";
             btn.style.display = 'inline-block';
             btn.innerText = "Play Again";
@@ -297,7 +297,7 @@ function spawnEntity(area, speedMultiplier) {
         if(type === 'normal') {
             cakeScore += 10;
             triggerMiniConfetti(entity, ['#ffffff', '#ff1493']);
-            document.getElementById('cake-msg').innerText = "Atual Energy Level: +10 🎂";
+            document.getElementById('cake-msg').innerText = "Ataul Energy Level: +10 🎂";
         } else if(type === 'golden') {
             cakeScore += 50;
             triggerMiniConfetti(entity, ['#ffd700', '#ffa500']);
@@ -432,7 +432,7 @@ function blowCandle(element) {
     if(candlesBlown === 3) {
         setTimeout(() => {
             const msg = document.getElementById('wish-msg');
-            msg.innerText = "Make a wish Atual ✨";
+            msg.innerText = "Make a wish Ataul ✨";
             msg.classList.remove("hidden");
             gsap.from(msg, { scale: 0.5, opacity: 0, y: 30, duration: 1, ease: 'elastic.out(1, 0.5)' });
             
