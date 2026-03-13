@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Atual 🎉</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Setup Background Music -->
+    <audio id="bg-music" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=ambient-piano-ampamp-strings-10711.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <!-- Volume Control Integration -->
+        <div class="music-controls">
+            <button id="music-toggle" class="glass-btn fab" title="Play/Pause Music">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="volume-slider-container glass-card">
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+            </div>
+        </div>
+        <button id="reaction-btn" class="glass-btn fab" title="Send Love">
+            <i class="fas fa-heart"></i>
+        </button>
+        <button id="whatsapp-share" class="glass-btn fab" title="Share on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+        <button id="ig-share" class="glass-btn fab" title="Share on Instagram">
+            <i class="fab fa-instagram"></i>
+        </button>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="scroll-bar" id="scroll-bar"></div>
+    </div>
+
+    <!-- Section 1: Hero Cinematic Intro -->
+    <section id="hero" class="fullscreen-section cinematic-bg">
+        <div id="particles-js"></div>
+        <div class="stars"></div>
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+        
+        <div class="hero-content parallax" data-parallax="1.5">
+            <p class="hero-cinematic-text" id="cine-1"></p>
+            <p class="hero-cinematic-text mt-2" id="cine-2"></p>
+            
+            <h1 class="hero-title glowing-text hidden" id="cine-3">
+                <span class="highlight">HAPPY BIRTHDAY ATUAL 🎉</span>
+            </h1>
+            
+            <div class="hidden mt-2" id="cine-4">
+                <button class="primary-btn glow-btn" id="btn-surprise">
+                    <i class="fas fa-gift"></i> Start the Celebration
+                </button>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator hidden" id="scroll-hint">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Section 2: Special Message -->
+    <section id="message" class="padding-section">
+        <div class="container">
+            <div class="glass-card message-card reveal-up neon-border parallax" data-parallax="0.5">
+                <i class="fas fa-quote-left quote-icon premium-icon"></i>
+                <p class="message-text">
+                    Dear <strong>Atual</strong>,<br><br>
+                    Some people simply exist in the world.<br>
+                    But some people make the world brighter just by being in it.<br><br>
+                    You are that person.<br><br>
+                    Your friendship brings joy,<br>
+                    your presence creates memories,<br>
+                    and your smile spreads happiness everywhere.<br><br>
+                    Today we celebrate you.<br><br>
+                    <span class="highlight-text premium-text">Happy Birthday Atual 🎂✨</span><br><br>
+                    May your life be filled with success, adventure, laughter, and dreams that come true.
+                </p>
+                <div class="floating-hearts-container" id="hearts-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Memories Gallery -->
+    <section id="memories" class="padding-section relative">
+        <div class="decor-blob blob-1"></div>
+        <div class="container">
+            <h2 class="section-title reveal-up">📸 Our Legendary Memories With <span class="highlight">Atual</span></h2>
+            
+            <div class="gallery-slider reveal-up">
+                <div class="gallery-track">
+                    <!-- Polaroid Cards with Glowing Borders -->
+                    <div class="polaroid-card premium-polaroid" onclick="openLightbox(this)">
+                        <div class="polaroid-img placeholder-img img-1"></div>
+                        <p class="polaroid-caption">Best times together ✨</p>
+                    </div>
+                    <div class="polaroid-card premium-polaroid" onclick="openLightbox(this)">
+                        <div class="polaroid-img placeholder-img img-2"></div>
+                        <p class="polaroid-caption">Unforgettable laughs 😂</p>
+                    </div>
+                    <div class="polaroid-card premium-polaroid" onclick="openLightbox(this)">
+                        <div class="polaroid-img placeholder-img img-3"></div>
+                        <p class="polaroid-caption">Adventures ahead 🚀</p>
+                    </div>
+                    <div class="polaroid-card premium-polaroid" onclick="openLightbox(this)">
+                        <div class="polaroid-img placeholder-img img-4"></div>
+                        <p class="polaroid-caption">Legendary squad 🔥</p>
+                    </div>
+                </div>
+                <div class="swipe-hint">
+                    <i class="fas fa-arrows-alt-h"></i> Swipe to explore
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Advanced Fun Games -->
+    <section id="games" class="padding-section dark-glow-bg">
+        <div class="container">
+            <h2 class="section-title reveal-up">🎮 Birthday Fun Zone</h2>
+            <div class="games-grid">
+                
+                <!-- Game 1: Catch The Flying Cake -->
+                <div class="glass-card game-card reveal-up neon-border-blue">
+                    <div class="game-header">
+                        <h3>Catch The Cake</h3>
+                        <div class="score-badge">Atual Energy Level: <span id="cake-score">0</span> 🎂</div>
+                    </div>
+                    <div class="game-area" id="catch-cake-area">
+                        <button class="primary-btn start-game-btn" id="start-catch-cake">Start Catching</button>
+                    </div>
+                    <p class="game-message premium-msg" id="cake-msg">Catch cakes! Beware of bombs! Golden cakes give big points!</p>
+                </div>
+
+                <!-- Game 2: Find Atual's Legendary Gift -->
+                <div class="glass-card game-card reveal-up neon-border-pink" style="transition-delay: 0.1s">
+                    <div class="game-header">
+                        <h3>Find Atual's Legendary Gift</h3>
+                    </div>
+                    <div class="gift-area" id="gift-area-container">
+                        <div class="gift-box premium-gift" onclick="openGift(this, 1)">🎁</div>
+                        <div class="gift-box premium-gift" onclick="openGift(this, 2)">🎁</div>
+                        <div class="gift-box premium-gift" onclick="openGift(this, 3)">🎁</div>
+                    </div>
+                    <p class="game-message premium-msg" id="gift-msg">Choose a box for your legendary reward!</p>
+                </div>
+
+                <!-- Game 3: Birthday Quiz Challenge -->
+                <div class="glass-card game-card reveal-up neon-border-purple" style="transition-delay: 0.2s">
+                    <div class="game-header">
+                        <h3>Birthday Quiz Challenge</h3>
+                    </div>
+                    <div class="quiz-area" id="quiz-area">
+                        <p class="quiz-q">What makes today legendary?</p>
+                        <button class="quiz-btn premium-quiz-btn" onclick="checkQuiz(this, false)">1. Just a random day</button>
+                        <button class="quiz-btn premium-quiz-btn" onclick="checkQuiz(this, false)">2. A normal celebration</button>
+                        <button class="quiz-btn premium-quiz-btn" onclick="checkQuiz(this, true)">3. Atual was born today</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Ultra Realistic Interactive Cake -->
+    <section id="cake-section" class="padding-section full-height flex-center premium-cake-bg">
+        <div class="ambient-glow glow-cake"></div>
+        <div class="container text-center reveal-up">
+            <h2 class="section-title">🎂 Atual, make a wish and blow the candles.</h2>
+            
+            <div class="cake-container">
+                <div class="cake-3d premium-3d-cake">
+                    <div class="candle realistic-candle" onclick="blowCandle(this)">
+                        <div class="flame realistic-flame"></div>
+                    </div>
+                    <div class="candle realistic-candle" onclick="blowCandle(this)">
+                        <div class="flame realistic-flame"></div>
+                    </div>
+                    <div class="candle realistic-candle" onclick="blowCandle(this)">
+                        <div class="flame realistic-flame"></div>
+                    </div>
+                    <div class="cake-top premium-frosting"></div>
+                    <div class="cake-middle premium-sponge"></div>
+                    <div class="cake-bottom premium-base"></div>
+                </div>
+            </div>
+            
+            <p class="instruction-text mt-2"><i class="fas fa-hand-pointer"></i> Tap the candles</p>
+            <h3 class="wish-msg magical-text hidden" id="wish-msg">Generating Fireworks... ✨</h3>
+        </div>
+    </section>
+
+    <!-- Section 6: Final Surprise -->
+    <section id="surprise" class="padding-section full-height flex-center night-sky">
+        <div id="final-particles"></div>
+        <div class="container text-center">
+            <div class="reveal-up" id="pre-surprise">
+                <button class="huge-glow-btn ultra-premium-btn" id="btn-final">
+                    Unlock Final Birthday Surprise
+                </button>
+            </div>
+            
+            <div class="final-message hidden" id="post-surprise">
+                <h1 class="mega-glowing-text">Happy Birthday Atual 🎉</h1>
+                <div class="glass-card mt-2 premium-glass">
+                    <p class="emotional-text premium-emotional">
+                        <strong>Atual,</strong><br><br>
+                        Having a friend like you is one of the greatest gifts life has given.<br><br>
+                        Thank you for every laugh, every memory, and every moment.<br><br>
+                        <span class="highlight">Happy Birthday Atual 🎉</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
